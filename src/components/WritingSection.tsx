@@ -111,18 +111,20 @@ const WritingSection = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">
-            Want to stay updated with my latest research and insights?
-          </p>
-          <Button 
-            size="lg"
-            onClick={() => window.open("https://huggingface.co/anasAmchaar", "_blank")}
-            className="flex items-center gap-2"
-          >
-            <span>Follow on Hugging Face</span>
-            <ExternalLink className="w-4 h-4" />
-          </Button>
+        <div className="text-center mt-16 px-4">
+          <div className="max-w-2xl mx-auto">
+            <p className="text-muted-foreground mb-6 text-lg">
+              Want to stay updated with my latest research and insights?
+            </p>
+            <Button 
+              size="lg"
+              onClick={() => window.open("https://huggingface.co/anasAmchaar", "_blank")}
+              className="flex items-center gap-3 px-8 py-3 text-base font-medium hover:scale-105 transition-transform duration-200"
+            >
+              <span>Follow on Hugging Face</span>
+              <ExternalLink className="w-5 h-5" />
+            </Button>
+          </div>
         </div>
       </div>
     </section>
