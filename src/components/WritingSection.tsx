@@ -117,9 +117,11 @@ const WritingSection = () => {
           </p>
           <Button 
             size="lg"
-            onClick={() => window.open("mailto:amchaaranas@gmail.com?subject=Subscribe to Updates", "_blank")}
+            onClick={() => window.open("https://huggingface.co/anasAmchaar", "_blank")}
+            className="flex items-center gap-2"
           >
-            Subscribe to Updates
+            <span>Follow on Hugging Face</span>
+            <ExternalLink className="w-4 h-4" />
           </Button>
         </div>
       </div>
