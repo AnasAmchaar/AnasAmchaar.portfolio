@@ -116,14 +116,16 @@ const WritingSection = () => {
             <p className="text-muted-foreground mb-6 text-lg">
               Want to stay updated with my latest research and insights?
             </p>
-            <Button 
-              size="lg"
-              onClick={() => window.open("https://huggingface.co/anasAmchaar", "_blank")}
-              className="flex items-center gap-3 px-8 py-3 text-base font-medium hover:scale-105 transition-transform duration-200"
-            >
-              <span>Follow on Hugging Face</span>
-              <ExternalLink className="w-5 h-5" />
-            </Button>
+            <div className="flex justify-center">
+              <Button 
+                size="lg"
+                onClick={() => window.open("https://huggingface.co/anasAmchaar", "_blank")}
+                className="flex items-center gap-3 px-8 py-3 text-base font-medium hover:scale-105 transition-transform duration-200"
+              >
+                <span>Follow on Hugging Face</span>
+                <ExternalLink className="w-5 h-5" />
+              </Button>
+            </div>
           </div>
         </div>
       </div>
