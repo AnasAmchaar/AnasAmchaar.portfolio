@@ -19,10 +19,10 @@ const ExperienceSection = () => {
     {
       title: "Data team member",
       company: "AtlasIA",
-      location: "Paris, France",
+      location: "Everywhere",
       period: "Sep 2024 - Present",
       description: "Working on Open Source project to elevate the moroccan contribution in AI research and development.",
-      technologies: ["Open Source", "AI Research", "Data Science", "VLM", "AI Agents", "RAG", "Computer Vision"],
+      technologies: ["Anything that is AI"],
       achievements: [
         "Contributing to the development of the First Moroccan Meme Engine.",
         "Leading a team of 8 people to develop Moroccan Ghibli Style Image Generator.",

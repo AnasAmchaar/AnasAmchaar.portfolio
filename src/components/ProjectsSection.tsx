@@ -5,6 +5,17 @@ import { Button } from "@/components/ui/button";
 const ProjectsSection = () => {
   const projects = [
     {
+      title: "Public Measles Chatbot",
+      description: "an advanced Agentic Retrieval-Augmented Generation application built using LangGraph, designed to provide dynamic, accurate, and source-grounded responses to complex queries related to measles. \n This system is tailored for the public use and is designed to be easy to use and understand.",
+      technologies: ["AI Agents", "LangGraph", "RAG", "Python", "LLMs", "Embedding"],
+      features: [
+        "Answering high-stakes clinical questions"
+      ],
+      github: "https://github.com/AnasAmchaar/AI-Agent-For-Measles-Website",
+      demo: "Not deployed",
+      status: "Ongoing"
+    },
+    {
       title: "IkhbarIA",
       description: "AI-powered newsletter with advanced LLM integration and automated scraping pipeline. Processes news articles in real-time and generates concise, accurate summaries.",
       technologies: ["Python", "LLMs", "Web Scraping", "NLP", "API Development"],

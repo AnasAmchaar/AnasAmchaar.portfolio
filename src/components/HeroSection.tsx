@@ -111,14 +111,6 @@ const HeroSection = () => {
           >
             Explore My Work
           </Button>
-          <Button 
-            variant="outline" 
-            size="lg"
-            className="border-2 border-border hover:border-primary/50 px-10 py-4 rounded-xl font-semibold backdrop-blur-sm"
-            onClick={() => window.open("mailto:anass.amchaar14@gmail.com", "_blank")}
-          >
-            Get In Touch
-          </Button>
         </div>
 
         {/* Scroll Indicator */}

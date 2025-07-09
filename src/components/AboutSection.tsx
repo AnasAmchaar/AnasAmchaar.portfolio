@@ -63,9 +63,9 @@ const AboutSection = () => {
             
             <div className="space-y-6 text-lg leading-relaxed">
               <p className="floating-card p-6 rounded-2xl">
-                I'm a passionate AI/ML engineering student at{" "}
+                Yo, Hello everyone! I'm a passionate AI/ML engineering student at{" "}
                 <span className="text-primary font-semibold bg-primary/10 px-2 py-1 rounded-md">ENSAM Rabat</span>,
-                specializing in data science, artificial intelligence, and digital health.
+                and Also a Data team member at <span className="text-primary font-semibold bg-primary/10 px-2 py-1 rounded-md">AtlasIA</span>.
               </p>
               
               <p className="floating-card p-6 rounded-2xl">
