@@ -5,10 +5,27 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+
+  const roles = [
+    "AI/ML Engineer",
+    "AI Researcher", 
+    "Backend Developer",
+    "Data Scientist",
+    "Data Analyst"
+  ];
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
+    }, 2000); // Change every 2 seconds
+
+    return () => clearInterval(interval);
+  }, [roles.length]);
 
   const scrollToAbout = () => {
     const aboutElement = document.querySelector("#about");
@@ -54,7 +71,11 @@ const HeroSection = () => {
           <p className={`text-xl md:text-3xl lg:text-4xl text-muted-foreground mb-2 ${
             isVisible ? "animate-slide-in-right" : "opacity-0"
           }`} style={{ animationDelay: "0.2s" }}>
-            AI/ML Engineer & Researcher
+            <span className="inline-block min-w-[300px] md:min-w-[400px] lg:min-w-[500px]">
+              {roles[currentRoleIndex]}
+            </span>
+            <span className="text-primary">&</span>{" "}
+            <span>Researcher</span>
           </p>
           
           {/* Underline decoration */}
