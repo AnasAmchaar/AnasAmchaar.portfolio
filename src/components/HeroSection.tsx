@@ -74,8 +74,6 @@ const HeroSection = () => {
             <span className="inline-block min-w-[300px] md:min-w-[400px] lg:min-w-[500px]">
               {roles[currentRoleIndex]}
             </span>
-            <span className="text-primary">&</span>{" "}
-            <span>Researcher</span>
           </p>
           
           {/* Underline decoration */}
