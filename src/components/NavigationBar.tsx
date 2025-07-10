@@ -1,20 +1,46 @@
 
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const NavigationBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLightMode, setIsLightMode] = useState(false);
 
+  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // On mount, check localStorage for mode
+  useEffect(() => {
+    const mode = localStorage.getItem("theme-mode");
+    if (mode === "light") {
+      document.body.classList.add("light");
+      setIsLightMode(true);
+    } else {
+      document.body.classList.remove("light");
+      setIsLightMode(false);
+    }
+  }, []);
+
+  // Toggle mode
+  const toggleMode = () => {
+    if (isLightMode) {
+      document.body.classList.remove("light");
+      localStorage.setItem("theme-mode", "dark");
+      setIsLightMode(false);
+    } else {
+      document.body.classList.add("light");
+      localStorage.setItem("theme-mode", "light");
+      setIsLightMode(true);
+    }
+  };
 
   const navItems = [
     { name: "About", href: "#about" },
@@ -55,6 +81,16 @@ const NavigationBar = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
+            {/* Light/Dark Mode Toggle Button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-label="Toggle light/dark mode"
+              onClick={toggleMode}
+              className="ml-2"
+            >
+              {isLightMode ? <Moon /> : <Sun />}
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -71,7 +107,17 @@ const NavigationBar = () => {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="md:hidden absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border/50 animate-slide-in-left">
-            <div className="py-4 space-y-4">
+            <div className="py-4 space-y-4 flex flex-col items-start">
+              {/* Light/Dark Mode Toggle Button (Mobile) */}
+              <Button
+                variant="ghost"
+                size="icon"
+                aria-label="Toggle light/dark mode"
+                onClick={toggleMode}
+                className="mb-2 self-end"
+              >
+                {isLightMode ? <Moon /> : <Sun />}
+              </Button>
               {navItems.map((item) => (
                 <button
                   key={item.name}
